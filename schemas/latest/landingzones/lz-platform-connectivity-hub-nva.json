@@ -64,9 +64,6 @@
           "ddosStandard": {
             "$ref": "#/definitions/ddosStandard"
           },
-          "publicAccessZone": {
-            "$ref": "#/definitions/publicAccessZone"
-          },
           "managementRestrictedZone": {
             "$ref": "#/definitions/managementRestrictedZone"
           },
@@ -102,7 +99,6 @@
           "subscriptionTags",
           "privateDnsZones",
           "ddosStandard",
-          "publicAccessZone",
           "managementRestrictedZone",
           "hub",
           "networkWatcher"
@@ -152,29 +148,6 @@
               "enabled",
               "resourceGroupName",
               "planName"
-            ]
-          }
-        },
-        "required": [
-          "value"
-        ]
-      },
-      "publicAccessZone": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "object",
-            "properties": {
-              "enabled": {
-                "type": "boolean"
-              },
-              "resourceGroupName": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "enabled",
-              "resourceGroupName"
             ]
           }
         },
@@ -264,25 +237,13 @@
                       "bastion": {
                         "$ref": "#/definitions/requiredSubnet"
                       },
-                      "public": {
-                        "$ref": "#/definitions/requiredSubnet"
-                      },
-                      "publicAccessZone": {
-                        "$ref": "#/definitions/requiredSubnet"
-                      },
                       "externalAccessNetwork": {
-                        "$ref": "#/definitions/requiredSubnet"
-                      },
-                      "nonProductionInternal": {
                         "$ref": "#/definitions/requiredSubnet"
                       },
                       "productionInternal": {
                         "$ref": "#/definitions/requiredSubnet"
                       },
                       "managementRestrictedZoneInternal": {
-                        "$ref": "#/definitions/requiredSubnet"
-                      },
-                      "highAvailability": {
                         "$ref": "#/definitions/requiredSubnet"
                       },
                       "optional": {
@@ -295,13 +256,9 @@
                     "required": [
                       "gateway",
                       "bastion",
-                      "public",
-                      "publicAccessZone",
                       "externalAccessNetwork",
-                      "nonProductionInternal",
                       "productionInternal",
                       "managementRestrictedZoneInternal",
-                      "highAvailability",
                       "optional"
                     ]
                   }
@@ -520,7 +477,6 @@
                 "internalIp",
                 "externalIp",
                 "mrzInternalIp",
-                "highAvailabilityIp",
                 "availabilityZone"
               ]
             }
